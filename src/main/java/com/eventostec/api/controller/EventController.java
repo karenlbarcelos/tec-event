@@ -20,12 +20,12 @@ public class EventController {
                                         @RequestParam(value = "description", required = false) String description,
                                         @RequestParam("date") Long date,
                                         @RequestParam("city") String city,
-                                        @RequestParam("state") String state,
+                                        @RequestParam("uf") String uf,
                                         @RequestParam("remote") Boolean remote,
                                         @RequestParam("eventUrl") String eventUrl,
-                                        @RequestParam(value = "image", required = false) MultipartFile image){
+                                        @RequestParam(value = "image_url", required = false) MultipartFile image_url){
 
-        EventRequestDTO eventRequestDTO = new EventRequestDTO(title, description, date, city, state, remote, eventUrl, image);
+        EventRequestDTO eventRequestDTO = new EventRequestDTO(title, description, date, city, uf, remote, eventUrl, image_url);
         Event newEvent = this.eventService.createEvent(eventRequestDTO);
         return ResponseEntity.ok(newEvent);
     }

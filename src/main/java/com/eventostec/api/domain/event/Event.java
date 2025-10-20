@@ -28,7 +28,7 @@ public class Event {
 
     private String description;
 
-    private String imgUrl;
+    private String imageUrl;
 
     private String eventUrl;
 
